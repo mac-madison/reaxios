@@ -10,7 +10,7 @@ const Board = ({ board, deleteBoard }) => {
     <>
       <Card
         className="card border-primary mb-3"
-        style={{ remSize, marginTop: 15 }}
+        style={{ remSize, marginTop: 15, backgroundColor: "lightyellow" }}
       >
         <Card.Body>
           <Card.Title>{`${board.title}`}</Card.Title>
@@ -26,7 +26,7 @@ const Board = ({ board, deleteBoard }) => {
               deleteBoard(board.id);
             }}
             // style={{ borderRadius: "20px" }}
-            className="btn btn-secondary"
+            className="btn btn-light"
             variant="secondary"
           >
             delete
