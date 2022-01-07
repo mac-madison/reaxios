@@ -40,7 +40,7 @@ const BoardForm = (props) => {
   return (
     <form id="board-form" onSubmit={onFormSubmit}>
       <div class="form-group">
-        <label class="form-label mt-4">Create A Board</label>
+        <label class="form-label mt-4"></label>
         <div class="form-floating mb-3">
           <input
             class="form-control"
@@ -48,7 +48,7 @@ const BoardForm = (props) => {
             value={formFields.title}
             onChange={onTitleChange}
           />
-          <label for="floatingInput">Title</label>
+          <label for="floatingInput">Message</label>
         </div>
         <div class="form-floating">
           <input
@@ -57,9 +57,9 @@ const BoardForm = (props) => {
             value={formFields.owner}
             onChange={onOwnerChange}
           />
-          <label for="floatingPassword">Owner</label>
+          <label for="floatingPassword">Name</label>
         </div>
-        <input type="submit" value="add board" />
+        <input type="submit" value="add board" style={{ marginTop: 8 }} />
       </div>
     </form>
   );

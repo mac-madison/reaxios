@@ -5,7 +5,9 @@ const NavBarCom = ({ showForm }) => {
   return (
     <Navbar sticky="top" bg="light" variant="light">
       <Container>
-        <Navbar.Brand onClick={showForm}>Create Board</Navbar.Brand>
+        <Navbar.Brand onClick={showForm}>
+          Click here to write a note!
+        </Navbar.Brand>
       </Container>
     </Navbar>
   );

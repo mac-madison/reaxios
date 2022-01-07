@@ -58,7 +58,7 @@ const App = () => {
   return (
     <div className="App">
       <Container>
-        <h1>INSPIRATION BOARD</h1>
+        <h1>INTERVIEW WEEK INSPIRATION</h1>
         <NavBarCom showForm={() => setShowBoardForm(true)} />
         {showBoardForm ? (
           <BoardForm addBoardCallback={addBoard} hideBoard={hideBoardForm} />
