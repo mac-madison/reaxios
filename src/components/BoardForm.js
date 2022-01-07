@@ -65,8 +65,6 @@ const BoardForm = (props) => {
   );
 };
 
-// onClick={props.hideBoard}
-
 BoardForm.propTypes = {
   addBoardCallback: PropTypes.func.isRequired,
   hideBoard: PropTypes.func.isRequired,

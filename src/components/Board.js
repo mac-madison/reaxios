@@ -9,7 +9,7 @@ const Board = ({ board, deleteBoard }) => {
           <Card.Title>{`${board.title}`}</Card.Title>
           <Card.Text>
             <div>
-              <strong>Owner:</strong>
+              <strong>Owner: </strong>
               {board.owner}
             </div>
           </Card.Text>

@@ -6,18 +6,12 @@ import { Container } from "react-bootstrap";
 import Boards from "./components/Boards";
 import BoardForm from "./components/BoardForm";
 import axios from "axios";
-import Popup from "./components/CardsPopUp";
 
 const URL = "https://kinder-code.herokuapp.com/boards";
 const App = () => {
   const [boards, setBoards] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showBoardForm, setShowBoardForm] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-
-  const togglePopup = () => {
-    setIsOpen(!isOpen);
-  };
 
   useEffect(() => {
     getBoards();
@@ -41,6 +35,9 @@ const App = () => {
       })
       .then(function (response) {
         console.log(response);
+        const copy = [...boards];
+        copy.push(response.data);
+        setBoards(copy);
       })
       .catch(function (error) {
         console.log(error);
@@ -50,30 +47,18 @@ const App = () => {
   const deleteBoard = async (id) => {
     console.log("delete");
     await axios.delete(`${URL}/${id}`);
+    const copy = boards.filter((board) => board.id !== id);
+    setBoards(copy);
   };
 
   const hideBoardForm = () => {
     return setShowBoardForm(false);
   };
+
   return (
     <div className="App">
       <Container>
-        <div>
-          <input type="button" value="Pop Up test" onClick={togglePopup} />
-
-          {isOpen && (
-            <Popup
-              content={
-                <>
-                  <b>Mac's Board</b>
-                  <p>"Fly like an eagle"</p>
-                  <button>Test button</button>
-                </>
-              }
-              handleClose={togglePopup}
-            />
-          )}
-        </div>
+        <h1>INSPIRATION BOARD</h1>
         <NavBarCom showForm={() => setShowBoardForm(true)} />
         {showBoardForm ? (
           <BoardForm addBoardCallback={addBoard} hideBoard={hideBoardForm} />
