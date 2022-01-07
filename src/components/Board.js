@@ -25,7 +25,7 @@ const Board = ({ board, deleteBoard }) => {
             onClick={() => {
               deleteBoard(board.id);
             }}
-            style={{ borderRadius: "20px" }}
+            // style={{ borderRadius: "20px" }}
             className="btn btn-secondary"
             variant="secondary"
           >
