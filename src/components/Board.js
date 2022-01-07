@@ -2,6 +2,10 @@ import React from "react";
 import { Button, Card } from "react-bootstrap";
 
 const Board = ({ board, deleteBoard }) => {
+  const remSize = {
+    maxWidth: "20rem",
+  };
+
   return (
     <>
       {/* <div class="card border-primary mb-3" style={{ maxWidth: 300 }}>
@@ -17,7 +21,7 @@ const Board = ({ board, deleteBoard }) => {
 
       <Card
         className="card border-primary mb-3"
-        style={{ maxWidth: 300, marginTop: 15 }}
+        style={{ remSize, marginTop: 15 }}
       >
         <Card.Body>
           <Card.Title>{`${board.title}`}</Card.Title>
