@@ -59,7 +59,7 @@ const BoardForm = (props) => {
           />
           <label for="floatingPassword">Name</label>
         </div>
-        <input type="submit" value="add board" style={{ marginTop: 8 }} />
+        <input type="submit" value="add note" style={{ marginTop: 8 }} />
       </div>
     </form>
   );
